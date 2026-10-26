@@ -1,97 +1,101 @@
 # Algorithms & Data Structures
 
-A personal learning repository for practicing **algorithms and data structures** with Python. This repository contains Jupyter notebooks used to explore problem-solving techniques, implement concepts, and build a stronger foundation in computer science.
+A Python-based learning repository focused on implementing algorithms and exploring their performance with **Jupyter Notebooks**. The notebooks combine hands-on problem solving with simple runtime experiments and visualizations.
 
-## About
+## What You'll Find Here
 
-The goal of this repository is to learn by doing:
+- Implementations of fundamental searching and sorting algorithms.
+- Runtime measurements across different input sizes.
+- Visual comparisons that help connect algorithm behavior with time complexity.
+- Practice code written and explored in Jupyter Notebook / Google Colab.
 
-- Practice algorithmic problem solving with Python.
-- Understand data structures and how they work.
-- Explore implementations through Jupyter Notebook.
-- Improve logical thinking and write clearer, more efficient solutions.
+## Notebooks
 
-## Repository Structure
-
-| File | Description |
+| Notebook | Topics |
 | --- | --- |
-| `Untitled1.ipynb` | Algorithm and data-structure practice notebook |
-| `Untitled2.ipynb` | Additional practice and learning notebook |
-| `untitled1.ipynb` | Further exercises and experiments |
+| [`Untitled1.ipynb`](./Untitled1.ipynb) | Linear search implementation and runtime visualization across list sizes |
+| [`Untitled2.ipynb`](./Untitled2.ipynb) | Insertion sort and heap sort implementations with runtime comparison |
+| [`untitled1.ipynb`](./untitled1.ipynb) | Linear search timing experiment |
 
-> Notebook names and contents may evolve as the repository grows.
+Open a notebook in [GitHub](https://github.com/suvakovan/algorithm) or use Google Colab:
+
+- [Open linear search notebook in Colab](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled1.ipynb)
+- [Open sorting comparison notebook in Colab](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled2.ipynb)
+- [Open additional linear search notebook in Colab](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/untitled1.ipynb)
 
 ## Getting Started
 
-### Requirements
+### Prerequisites
 
 - Python 3
 - Jupyter Notebook or JupyterLab
+- Matplotlib (used for plotting)
 
 ### Run locally
 
-1. Clone the repository:
+Clone the repository:
 
-   ```bash
-   git clone https://github.com/suvakovan/algorithm.git
-   cd algorithm
-   ```
+```bash
+git clone https://github.com/suvakovan/algorithm.git
+cd algorithm
+```
 
-2. (Optional) Create and activate a virtual environment:
+Create and activate a virtual environment (recommended):
 
-   ```bash
-   python -m venv .venv
-   ```
+```bash
+python -m venv .venv
+```
 
-   Windows:
+Windows:
 
-   ```bash
-   .venv\\Scripts\\activate
-   ```
+```bash
+.venv\\Scripts\\activate
+```
 
-   macOS / Linux:
+macOS / Linux:
 
-   ```bash
-   source .venv/bin/activate
-   ```
+```bash
+source .venv/bin/activate
+```
 
-3. Install Jupyter:
+Install the notebook tools and plotting library:
 
-   ```bash
-   python -m pip install notebook
-   ```
+```bash
+python -m pip install notebook matplotlib
+```
 
-4. Launch the notebooks:
+Start Jupyter:
 
-   ```bash
-   jupyter notebook
-   ```
+```bash
+jupyter notebook
+```
 
-Open a notebook and run its cells to explore the examples.
+Select a notebook and run its cells in order.
 
-## Learning Approach
+## Learning Goals
 
-For each problem or concept, aim to:
+This repository is a work in progress. The focus is to:
 
-1. Understand the problem and its constraints.
-2. Work through a small example.
-3. Develop a straightforward solution.
-4. Consider time and space complexity.
-5. Test edge cases and refine the implementation.
+1. Understand how algorithms work through implementation.
+2. Analyze how input size affects execution time.
+3. Compare approaches using practical experiments.
+4. Build stronger problem-solving and complexity-analysis skills.
 
-## Technologies
+## Tech Stack
 
 - **Language:** Python
-- **Environment:** Jupyter Notebook
+- **Notebook environment:** Jupyter Notebook / Google Colab
+- **Visualization:** Matplotlib
+- **Standard libraries used in examples:** `time`, `random`, and `heapq`
 
-## Contributing
+## Feedback
 
-This is a personal learning repository, but suggestions and constructive feedback are welcome. Feel free to open an issue to discuss an improvement.
+This is a personal learning project. Suggestions and constructive feedback are welcome—feel free to open an issue.
 
-## Connect
+## Author
 
-- GitHub: [@suvakovan](https://github.com/suvakovan)
+GitHub: [@suvakovan](https://github.com/suvakovan)
 
 ---
 
-*Learning algorithms one problem at a time.*
+*Learning, implementing, and analyzing one algorithm at a time.*
