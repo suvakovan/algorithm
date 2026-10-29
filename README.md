@@ -2,35 +2,38 @@
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Notebooks-Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![GitHub](https://img.shields.io/badge/Project-Open%20Source-2ea44f)](https://github.com/suvakovan/algorithm)
+[![Repository](https://img.shields.io/badge/Project-Algorithm%20Practice-2ea44f)](https://github.com/suvakovan/algorithm)
 
-A practical Python learning repository for implementing core algorithms, measuring their runtime, and visualizing how performance changes as input size grows. The examples are provided as Jupyter notebooks, making it easy to experiment with the code and learn by doing.
+A hands-on Python repository for practicing algorithms and understanding how their performance changes as input size grows. The project uses Jupyter notebooks to explore searching, sorting, runtime measurement, and visual comparison.
 
-## Table of Contents
+## Contents
 
-- [Project Overview](#project-overview)
+- [Project Goals](#project-goals)
 - [Notebook Guide](#notebook-guide)
-- [Algorithms and Complexity](#algorithms-and-complexity)
-- [Quick Start](#quick-start)
+- [Complexity Reference](#complexity-reference)
+- [Getting Started](#getting-started)
 - [Run in Google Colab](#run-in-google-colab)
-- [Benchmarking Tips](#benchmarking-tips)
-- [What You'll Learn](#what-youll-learn)
-- [Future Improvements](#future-improvements)
+- [Suggested Learning Workflow](#suggested-learning-workflow)
+- [Benchmarking Guidelines](#benchmarking-guidelines)
+- [Ideas for Future Work](#ideas-for-future-work)
 - [Contributing](#contributing)
 
-## Project Overview
+## Project Goals
 
-This repository explores searching and sorting through small, understandable Python implementations and runtime experiments. It is suitable for students practicing algorithms, Python, and basic empirical performance analysis.
+- Practice implementing fundamental algorithms in Python.
+- Connect algorithm design with time-complexity analysis.
+- Measure execution time across different input sizes.
+- Use Matplotlib to visualize performance trends.
 
 ## Notebook Guide
 
-| Notebook | Topics |
+| Notebook | What it covers |
 | --- | --- |
-| [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and execution-time visualization as list size changes |
+| [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and runtime visualization as list size changes |
 | [Untitled2.ipynb](./Untitled2.ipynb) | Insertion sort and heap-based sorting with timing comparisons |
 | [untitled1.ipynb](./untitled1.ipynb) | Additional linear-search timing experiment |
 
-## Algorithms and Complexity
+## Complexity Reference
 
 | Algorithm | Best case | Average case | Worst case |
 | --- | --- | --- | --- |
@@ -38,9 +41,9 @@ This repository explores searching and sorting through small, understandable Pyt
 | Insertion sort | O(n) | O(n²) | O(n²) |
 | Heap-based sorting | O(n log n) | O(n log n) | O(n log n) |
 
-These are standard time-complexity estimates. Actual execution times depend on input data, implementation details, hardware, and system load.
+These are standard asymptotic estimates. The measured runtime may differ depending on input order, implementation, hardware, and system load.
 
-## Quick Start
+## Getting Started
 
 ### Requirements
 
@@ -55,7 +58,7 @@ git clone https://github.com/suvakovan/algorithm.git
 cd algorithm
 ```
 
-### 2. Create and activate a virtual environment (recommended)
+### 2. Create and activate a virtual environment
 
 ```bash
 python -m venv .venv
@@ -73,46 +76,51 @@ macOS / Linux:
 source .venv/bin/activate
 ```
 
-### 3. Install dependencies and start Jupyter
+### 3. Install dependencies and launch Jupyter
 
 ```bash
 python -m pip install notebook matplotlib
 jupyter notebook
 ```
 
-Open a notebook in the browser and run its cells from top to bottom.
+Choose a notebook and run its cells in order.
 
 ## Run in Google Colab
 
-No local setup is needed to try the notebooks in Colab:
+You can experiment without installing Python locally:
 
-- [Open linear search experiment](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled1.ipynb)
-- [Open sorting comparison](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled2.ipynb)
-- [Open additional linear search experiment](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/untitled1.ipynb)
+- [Open the linear-search notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled1.ipynb)
+- [Open the sorting-comparison notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled2.ipynb)
+- [Open the additional linear-search notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/untitled1.ipynb)
 
-## Benchmarking Tips
+## Suggested Learning Workflow
 
-- Use the same input data when comparing algorithms.
-- Repeat measurements and compare averages instead of a single run.
-- Test multiple input sizes to identify growth trends.
-- Keep in mind that background processes and hardware can affect results.
-- Use plots as a learning aid; timing experiments do not replace complexity analysis.
+1. Read the algorithm and describe its steps in your own words.
+2. Run the notebook with a small input and check the output.
+3. Try edge cases, such as an empty list, one element, or a missing search target where applicable.
+4. Increase the input size and observe the runtime plot.
+5. Compare the observed trend with the expected time complexity.
+6. Change one part of the experiment at a time and record what changes.
 
-## What You'll Learn
+## Benchmarking Guidelines
 
-- Implement fundamental searching and sorting techniques.
-- Interpret best-, average-, and worst-case time complexity.
-- Measure runtime with Python.
-- Visualize experimental results with Matplotlib.
-- Think critically about edge cases and fair comparisons.
+- Compare algorithms using equivalent input data.
+- Run each experiment multiple times and compare average measurements.
+- Test several input sizes rather than drawing conclusions from one data point.
+- Avoid running heavy background tasks during timing experiments when possible.
+- Treat plots as experimental evidence, not as a substitute for complexity analysis.
 
-## Future Improvements
+## Ideas for Future Work
 
-Possible extensions for this learning project include adding binary search, merge sort and quicksort; writing automated correctness tests; and standardizing benchmarks across algorithms and input sizes.
+- Add binary search and compare it with linear search on sorted data.
+- Add merge sort and quicksort to expand the sorting comparison.
+- Write tests for correctness and edge cases.
+- Separate algorithm implementations from benchmark and plotting code.
+- Record repeated timings and summarize them in a comparison chart.
 
 ## Contributing
 
-Suggestions and corrections are welcome. Open an issue to discuss an improvement, or submit a pull request with a clear explanation of the change.
+Feedback and improvements are welcome. Open an issue to discuss an idea, or submit a pull request with a concise description of the change and the tests or experiments you ran.
 
 ## Author
 
@@ -120,4 +128,4 @@ Suggestions and corrections are welcome. Open an issue to discuss an improvement
 
 ---
 
-*Implement. Measure. Analyze. Repeat.*
+*Understand the algorithm. Measure its behavior. Learn from the results.*
