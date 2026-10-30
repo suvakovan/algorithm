@@ -2,48 +2,57 @@
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Notebooks-Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![Repository](https://img.shields.io/badge/Project-Algorithm%20Practice-2ea44f)](https://github.com/suvakovan/algorithm)
+[![Repository](https://img.shields.io/badge/Focus-Algorithms%20%26%20Analysis-2ea44f)](https://github.com/suvakovan/algorithm)
 
-A hands-on Python repository for practicing algorithms and understanding how their performance changes as input size grows. The project uses Jupyter notebooks to explore searching, sorting, runtime measurement, and visual comparison.
+A hands-on Python repository for learning fundamental algorithms through implementation and experimentation. Explore searching and sorting techniques, measure execution time, and use visualizations to understand how performance changes as input size grows.
 
-## Contents
+## Table of Contents
 
-- [Project Goals](#project-goals)
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
 - [Notebook Guide](#notebook-guide)
 - [Complexity Reference](#complexity-reference)
-- [Getting Started](#getting-started)
-- [Run in Google Colab](#run-in-google-colab)
-- [Suggested Learning Workflow](#suggested-learning-workflow)
-- [Benchmarking Guidelines](#benchmarking-guidelines)
-- [Ideas for Future Work](#ideas-for-future-work)
+- [Setup](#setup)
+- [Run with Google Colab](#run-with-google-colab)
+- [How to Experiment](#how-to-experiment)
+- [Benchmarking Notes](#benchmarking-notes)
+- [Next Steps](#next-steps)
 - [Contributing](#contributing)
+- [Author](#author)
 
-## Project Goals
+## Project Overview
 
-- Practice implementing fundamental algorithms in Python.
-- Connect algorithm design with time-complexity analysis.
-- Measure execution time across different input sizes.
-- Use Matplotlib to visualize performance trends.
+The notebooks focus on practical algorithm learning: implement a technique, run it with different inputs, measure its execution time, and compare the observed behavior with its theoretical complexity. Matplotlib is used for performance visualization.
+
+## Repository Structure
+
+```text
+algorithm/
+├── README.md
+├── Untitled1.ipynb
+├── Untitled2.ipynb
+└── untitled1.ipynb
+```
 
 ## Notebook Guide
 
-| Notebook | What it covers |
+| Notebook | Main topic |
 | --- | --- |
-| [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and runtime visualization as list size changes |
-| [Untitled2.ipynb](./Untitled2.ipynb) | Insertion sort and heap-based sorting with timing comparisons |
+| [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and execution-time visualization |
+| [Untitled2.ipynb](./Untitled2.ipynb) | Insertion sort and heap-based sorting comparisons |
 | [untitled1.ipynb](./untitled1.ipynb) | Additional linear-search timing experiment |
 
 ## Complexity Reference
 
-| Algorithm | Best case | Average case | Worst case |
-| --- | --- | --- | --- |
-| Linear search | O(1) | O(n) | O(n) |
-| Insertion sort | O(n) | O(n²) | O(n²) |
-| Heap-based sorting | O(n log n) | O(n log n) | O(n log n) |
+| Algorithm | Best time | Average time | Worst time | Auxiliary space |
+| --- | --- | --- | --- | --- |
+| Linear search | O(1) | O(n) | O(n) | O(1) |
+| Insertion sort | O(n) | O(n²) | O(n²) | O(1) |
+| Heap-based sorting (heapq) | O(n log n) | O(n log n) | O(n log n) | O(n) |
 
-These are standard asymptotic estimates. The measured runtime may differ depending on input order, implementation, hardware, and system load.
+Complexities are standard estimates. The heap-based notebook approach uses a heap to retrieve elements in sorted order; its auxiliary storage is linear in the number of elements. Actual runtime depends on input data, implementation, hardware, and system load.
 
-## Getting Started
+## Setup
 
 ### Requirements
 
@@ -83,44 +92,40 @@ python -m pip install notebook matplotlib
 jupyter notebook
 ```
 
-Choose a notebook and run its cells in order.
+Open a notebook in the browser and execute its cells in order.
 
-## Run in Google Colab
+## Run with Google Colab
 
-You can experiment without installing Python locally:
+Try the notebooks online without setting up a local Python environment:
 
-- [Open the linear-search notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled1.ipynb)
-- [Open the sorting-comparison notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled2.ipynb)
-- [Open the additional linear-search notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/untitled1.ipynb)
+- [Linear search notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled1.ipynb)
+- [Sorting comparison notebook](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/Untitled2.ipynb)
+- [Additional linear-search experiment](https://colab.research.google.com/github/suvakovan/algorithm/blob/main/untitled1.ipynb)
 
-## Suggested Learning Workflow
+## How to Experiment
 
-1. Read the algorithm and describe its steps in your own words.
-2. Run the notebook with a small input and check the output.
-3. Try edge cases, such as an empty list, one element, or a missing search target where applicable.
-4. Increase the input size and observe the runtime plot.
-5. Compare the observed trend with the expected time complexity.
-6. Change one part of the experiment at a time and record what changes.
+1. Start with a small input and verify the algorithm's output.
+2. Try edge cases, including empty inputs, single-element inputs, and unsuccessful searches where applicable.
+3. Increase the input size gradually and record the execution time.
+4. Repeat measurements to reduce the effect of random system variation.
+5. Plot the results and compare the trend with the expected complexity.
+6. Explain any difference between theoretical growth and observed timings.
 
-## Benchmarking Guidelines
+## Benchmarking Notes
 
-- Compare algorithms using equivalent input data.
-- Run each experiment multiple times and compare average measurements.
-- Test several input sizes rather than drawing conclusions from one data point.
-- Avoid running heavy background tasks during timing experiments when possible.
-- Treat plots as experimental evidence, not as a substitute for complexity analysis.
+- Use equivalent input sizes and comparable data when evaluating algorithms.
+- Repeat each measurement and compare averages or medians.
+- Keep the machine and execution conditions as consistent as possible.
+- Remember that plotting and notebook overhead can affect measurements.
+- Do not infer an algorithm's complexity from a single timing result.
 
-## Ideas for Future Work
+## Next Steps
 
-- Add binary search and compare it with linear search on sorted data.
-- Add merge sort and quicksort to expand the sorting comparison.
-- Write tests for correctness and edge cases.
-- Separate algorithm implementations from benchmark and plotting code.
-- Record repeated timings and summarize them in a comparison chart.
+Potential extensions include binary search, merge sort, quicksort, automated correctness tests, and a shared benchmark utility to compare multiple algorithms using consistent inputs.
 
 ## Contributing
 
-Feedback and improvements are welcome. Open an issue to discuss an idea, or submit a pull request with a concise description of the change and the tests or experiments you ran.
+Suggestions and corrections are welcome. Open an issue to discuss an improvement or submit a pull request with a clear description of the change and how it was tested.
 
 ## Author
 
@@ -128,4 +133,4 @@ Feedback and improvements are welcome. Open an issue to discuss an idea, or subm
 
 ---
 
-*Understand the algorithm. Measure its behavior. Learn from the results.*
+*Implement with clarity. Measure with care. Learn through analysis.*
