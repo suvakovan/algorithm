@@ -12,6 +12,8 @@ A hands-on Python repository for learning fundamental algorithms through impleme
 - [Repository Structure](#repository-structure)
 - [Notebook Guide](#notebook-guide)
 - [Complexity Reference](#complexity-reference)
+- [Understanding Big-O](#understanding-big-o)
+- [Troubleshooting](#troubleshooting)
 - [Choosing an Algorithm](#choosing-an-algorithm)
 - [Setup](#setup)
 - [Run with Google Colab](#run-with-google-colab)
@@ -141,6 +143,35 @@ When trying an implementation, consider testing:
 - Keep execution conditions as consistent as possible.
 - Measure the algorithm separately from plotting and display operations.
 - Do not infer complexity from one timing result; use theory and repeated experiments together.
+
+
+## Understanding Big-O
+
+Big-O notation describes how an algorithm's resource usage grows as the input size, usually written as `n`, increases. It is about growth rate rather than an exact execution time.
+
+| Complexity | Common name | Practical intuition |
+| --- | --- | --- |
+| O(1) | Constant | The work stays roughly the same as input grows |
+| O(log n) | Logarithmic | The problem size is reduced by a constant factor at each step |
+| O(n) | Linear | Work grows in proportion to the number of items |
+| O(n log n) | Linearithmic | Common in efficient general-purpose sorting |
+| O(n²) | Quadratic | Nested passes over the input can make work grow quickly |
+
+For example, linear search may inspect every element in an unsorted list, so its worst-case time is O(n). Insertion sort may shift many earlier elements for each new element, so its worst-case time is O(n²).
+
+When comparing algorithms, consider both time complexity and auxiliary space. Also remember that Big-O describes growth for large inputs; small inputs and implementation details can affect real-world performance.
+
+## Troubleshooting
+
+| Issue | What to try |
+| --- | --- |
+| `jupyter` command is not found | Activate the virtual environment and run `python -m pip install notebook` |
+| Matplotlib import fails | Run `python -m pip install matplotlib` in the same environment used by Jupyter |
+| Notebook cells use the wrong Python environment | In Jupyter, select the kernel associated with your project environment |
+| A plot does not appear | Re-run the plotting cell and check that the measurement lists contain data |
+| Timings vary between runs | Close unnecessary background tasks and repeat the benchmark several times |
+
+If an issue persists, note the command you ran, the full error message, and your Python version before investigating further.
 
 ## Next Steps
 
