@@ -19,6 +19,7 @@ A hands-on Python repository for learning fundamental algorithms through impleme
 - [Run with Google Colab](#run-with-google-colab)
 - [How to Experiment](#how-to-experiment)
 - [Practice Challenges](#practice-challenges)
+- [Algorithm Design Checklist](#algorithm-design-checklist)
 - [Correctness Checklist](#correctness-checklist)
 - [Benchmarking Notes](#benchmarking-notes)
 - [Next Steps](#next-steps)
@@ -203,6 +204,33 @@ Use these exercises to check your understanding and extend the notebook experime
 - Why is insertion sort often effective on nearly sorted data?
 - What is the difference between an algorithm's time complexity and its measured runtime?
 - Why should benchmark runs use the same input data when comparing implementations?
+
+
+
+## Algorithm Design Checklist
+
+Before implementing a new algorithm, work through these steps:
+
+1. **Define the problem:** State the expected input, output, and constraints.
+2. **Work through examples:** Include normal cases, boundary cases, and invalid inputs where relevant.
+3. **Choose an approach:** Consider a straightforward solution first, then compare alternatives.
+4. **Write the logic:** Use short pseudocode or a step-by-step explanation before coding.
+5. **Implement clearly:** Prefer meaningful names and small functions.
+6. **Verify correctness:** Test edge cases and compare results with a simple reference solution when possible.
+7. **Analyze efficiency:** Estimate time and auxiliary space complexity.
+8. **Measure performance:** Benchmark only after correctness is established.
+
+### Example: Linear search pseudocode
+
+```text
+LINEAR-SEARCH(items, target)
+    for each index i in items
+        if items[i] equals target
+            return i
+    return -1
+```
+
+The loop may inspect every element, so the worst-case time complexity is O(n). It uses O(1) auxiliary space when it does not create another collection.
 
 
 ## Next Steps
