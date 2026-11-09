@@ -46,17 +46,18 @@ algorithm/
 | --- | --- |
 | [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and execution-time visualization |
 | [Untitled2.ipynb](./Untitled2.ipynb) | Insertion sort and heap-based sorting comparisons |
-| [untitled1.ipynb](./untitled1.ipynb) | Additional linear-search timing experiment |
+| [untitled1.ipynb](./untitled1.ipynb) | Linear-search timing and recursive binary-search timing |
 
 ## Complexity Reference
 
 | Algorithm | Best time | Average time | Worst time | Auxiliary space |
 | --- | --- | --- | --- | --- |
 | Linear search | O(1) | O(n) | O(n) | O(1) |
+| Recursive binary search on a sorted list | O(1) | O(log n) | O(log n) | O(log n) |
 | Insertion sort | O(n) | O(n²) | O(n²) | O(1) |
 | Heap-based sorting with `heapq` | O(n log n) | O(n log n) | O(n log n) | O(n) |
 
-These are standard asymptotic estimates. The heap-based method builds/uses a heap and retrieves the elements in priority order; the notebook's approach requires additional storage proportional to the input. Actual timings depend on data, implementation, hardware, and system load.
+These are standard asymptotic estimates. Recursive binary search requires sorted input and uses O(log n) auxiliary call-stack space in the worst case. The heap-based method builds/uses a heap and retrieves the elements in priority order; the notebook's approach requires additional storage proportional to the input. Actual timings depend on data, implementation, hardware, and system load.
 
 ## Understanding Big-O
 
@@ -91,6 +92,7 @@ If an issue persists, note the command you ran, the full error message, and your
 | Task or situation | Suitable starting point | Reason |
 | --- | --- | --- |
 | Search a small or unsorted list | Linear search | Simple and does not require sorted input |
+| Search a sorted list repeatedly | Binary search | Halves the remaining search interval at each step; the list must stay sorted |
 | Sort a small or nearly sorted list | Insertion sort | Low overhead and efficient for nearly sorted data |
 | Repeatedly retrieve the smallest item | Heap-based approach | A heap supports efficient minimum-element retrieval |
 
@@ -173,6 +175,8 @@ When trying an implementation, consider testing:
 - Keep execution conditions as consistent as possible.
 - Measure the algorithm separately from plotting and display operations.
 - Do not infer complexity from one timing result; use theory and repeated experiments together.
+- In the notebooks, input generation is outside the timed region. In `untitled1.ipynb`, sorting is also completed before the binary-search timer starts, so that plot measures search time rather than the total cost of sorting and searching.
+- The current experiments take a single timing sample for each input size. For more reliable comparisons, repeat each case many times, use `time.perf_counter()`, and compare a median.
 
 
 
