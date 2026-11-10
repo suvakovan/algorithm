@@ -11,6 +11,7 @@ A hands-on Python repository for learning fundamental algorithms through impleme
 - [Project Overview](#project-overview)
 - [Repository Structure](#repository-structure)
 - [Notebook Guide](#notebook-guide)
+- [Notebook Implementation Details](#notebook-implementation-details)
 - [Complexity Reference](#complexity-reference)
 - [Understanding Big-O](#understanding-big-o)
 - [Troubleshooting](#troubleshooting)
@@ -47,6 +48,20 @@ algorithm/
 | [Untitled1.ipynb](./Untitled1.ipynb) | Linear search and execution-time visualization |
 | [Untitled2.ipynb](./Untitled2.ipynb) | Insertion sort and heap-based sorting comparisons |
 | [untitled1.ipynb](./untitled1.ipynb) | Linear-search timing and recursive binary-search timing |
+
+
+## Notebook Implementation Details
+
+The notebooks are useful learning experiments, and a few implementation details matter when interpreting their output:
+
+- **Linear search:** The timing functions generate a new random list and a random target for each input size. The target is not guaranteed to be present, so some runs may scan the entire list while others may stop at a match.
+- **Recursive binary search:** The list is sorted before the timer starts. Its plotted measurement therefore represents the search call, not the combined cost of sorting and searching. The input must remain sorted for the result to be valid.
+- **Insertion sort:** The function rearranges the supplied list in place and does not return a new sorted list; after calling it, inspect the original list.
+- **Heap-based sort:** The function calls `heapq.heapify()` on the supplied list, repeatedly removes its smallest item, and returns a separate sorted list. The supplied list is consumed and ends up empty.
+- **Comparing sorting timings:** The insertion-sort and heap-sort timing functions generate separate random lists. Their measurements use the same input sizes, but not identical input values, so treat the graph as an illustrative comparison rather than a controlled head-to-head benchmark.
+
+For more rigorous experiments, create one dataset per trial, pass copies of that same dataset to each sorting implementation, verify that both outputs match Python's `sorted()`, and repeat the measurements across multiple trials.
+
 
 ## Complexity Reference
 
