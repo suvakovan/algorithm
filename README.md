@@ -13,6 +13,7 @@ A hands-on Python repository for learning fundamental algorithms through impleme
 - [Notebook Guide](#notebook-guide)
 - [Notebook Implementation Details](#notebook-implementation-details)
 - [Complexity Reference](#complexity-reference)
+- [Binary Search Walkthrough](#binary-search-walkthrough)
 - [Understanding Big-O](#understanding-big-o)
 - [Troubleshooting](#troubleshooting)
 - [Choosing an Algorithm](#choosing-an-algorithm)
@@ -73,6 +74,32 @@ For more rigorous experiments, create one dataset per trial, pass copies of that
 | Heap-based sorting with `heapq` | O(n log n) | O(n log n) | O(n log n) | O(n) |
 
 These are standard asymptotic estimates. Recursive binary search requires sorted input and uses O(log n) auxiliary call-stack space in the worst case. The heap-based method builds/uses a heap and retrieves the elements in priority order; the notebook's approach requires additional storage proportional to the input. Actual timings depend on data, implementation, hardware, and system load.
+
+
+## Binary Search Walkthrough
+
+The recursive binary-search implementation in `untitled1.ipynb` works on an already sorted list. It checks the middle element and then continues only in the half that can contain the target.
+
+Consider this sorted input:
+
+```python
+values = [3, 8, 12, 17, 25, 31, 42]
+target = 25
+result = recursive_binary_search(values, target, 0, len(values) - 1)
+```
+
+The search follows these steps (indices are zero-based):
+
+| Step | Left | Right | Middle index | Middle value | Decision |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 1 | 0 | 6 | 3 | 17 | 25 is larger, search the right half |
+| 2 | 4 | 6 | 5 | 31 | 25 is smaller, search the left half |
+| 3 | 4 | 4 | 4 | 25 | Target found at index 4 |
+
+The interval shrinks by about half at each recursive call, giving O(log n) time in the average and worst cases. Because this implementation is recursive, its call stack can use O(log n) auxiliary space. If the target is absent, the interval eventually becomes empty and the function returns `-1`.
+
+**Important:** The list must be sorted before the search begins. If duplicate values exist, this implementation returns a matching index, but it does not guarantee the first occurrence.
+
 
 ## Understanding Big-O
 
